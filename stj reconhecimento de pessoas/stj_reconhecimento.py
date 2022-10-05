@@ -7,6 +7,17 @@ import pandas as pd
 
 #Function to define Bigram probDist
 def bigram_generator(word1, condfreqdist, freqdist):
+    """ Generates a sorted list of second word bigram probabilities
+    for a given first word in a corpus
+
+    Args:
+        word1 (str): first word of a bigram
+        condfreqdist (CondFreqDist): frequency number generator for bigrams
+        freqdist (FreqDist): frequency number generator for words in a corpus
+
+    Returns:
+        prob_list: sorted list of bigram probabilities
+    """
     prob_list = list()
     for word in condfreqdist[word1]:
         bigram_count = condfreqdist[word1][word]
